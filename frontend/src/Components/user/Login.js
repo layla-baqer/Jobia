@@ -21,7 +21,7 @@ function Login(props) {
     <div>
         <h1>Login</h1>
 
-        {/* <Container>
+        <Container>
             <Form.Group>
                 <Form.Label>email: </Form.Label>
                 <Form.Control name='email' type='email' onChange={changeHandler}></Form.Control>
@@ -35,7 +35,7 @@ function Login(props) {
             <br/>
 
             <Button variant='primary' onClick={loginHandler}>Login</Button>
-        </Container> */}
+        </Container>
 
     </div>
   )
