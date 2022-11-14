@@ -85,30 +85,31 @@ const auth_login_post = async (req, res) => {
     }
 }
 
-// async function createUserProfile(req, res) {
+async function createUserProfile(req, res) {
 
-//     try {
-//         // find the user
-//         let user = await User.findById(req.params.userId)
+    try {
+        // find the user
+        let user = await User.findById(req.params.userId)
 
-//         // create the tweet
-//         let newTweet = await Tweet.create(req.body)
+        // create the profile
+        let newProfile = await Profile.create(req.body)
 
-//         // push the new tweet Id into the user's tweets
-//         user.tweets.push(newTweet._id)
+        // push the new profile Id into the user's profile
+        user.profile.push(newProfile._id)
 
-//         // save changes
-//         await user.save()
+        // save changes
+        await user.save()
 
-//         // show the data
-//         // populate the data
-//         await user.populate('tweets')
-//         res.json(user)
-
-//     } catch (err) {
-//         res.json(err)
-//     }
-// }
+        // show the data
+        // populate the data
+        await user.populate('profile')
+        res.json(user)
+        
+    } catch (err) {
+        console.log(err)
+        res.json(err)
+    }
+}
 
 async function updateUser(req, res) {
     try {
@@ -136,7 +137,7 @@ async function deleteUser(req, res) {
 
 module.exports = {
     createUser,
-    // createUserTweet,
+    createUserProfile,
     updateUser,
     deleteUser,
     auth_login_post
