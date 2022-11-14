@@ -24,12 +24,12 @@ export default function Signup(props) {
         <Container>
             <Form.Group>
                 <Form.Label>firstName</Form.Label>
-                <Form.Control name="name" onChange={changeHandler}></Form.Control>
+                <Form.Control name="firstName" onChange={changeHandler}></Form.Control>
             </Form.Group>
 
             <Form.Group>
                 <Form.Label>lastName</Form.Label>
-                <Form.Control name="username" onChange={changeHandler}></Form.Control>
+                <Form.Control name="lastName" onChange={changeHandler}></Form.Control>
             </Form.Group>
 
             

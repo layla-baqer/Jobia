@@ -16,7 +16,7 @@ async function createUser(req, res) {
 
         // convert password to encrypted string
         let hashedPassword = bcrypt.hashSync(req.body.password, salt)
-        console.log(hashedPassword)
+        console.log('password:', hashedPassword)
 
         const newUser = await User.create({
         firstName: req.body.firstName,
@@ -36,11 +36,11 @@ async function createUser(req, res) {
 const auth_login_post = async (req, res) => {
     // Instead of using req.body.email or req.body.password
     let {email, password} = req.body;
-    console.log(email)
+    console.log('email:', email)
 
     try {
         let user = await User.findOne({email})
-        console.log(user)
+        console.log('user:', user)
 
         // if the user does not exist this we won't continue with password comparison
         if(!user) {
@@ -49,8 +49,8 @@ const auth_login_post = async (req, res) => {
 
         // password comparison
         const isMatch = await bcrypt.compareSync(password, user.password)
-        console.log(password)
-        console.log(user.password)
+        console.log('password:', password)
+        console.log('user.password:', user.password)
 
         // if the password is incorrect then return a message & exist the function (do not continue)
         if(!isMatch) {
