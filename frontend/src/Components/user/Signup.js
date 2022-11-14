@@ -20,7 +20,8 @@ export default function Signup(props) {
     <div>
         <h1>Signup</h1>
 
-        {/* <Container>
+
+        <Container>
             <Form.Group>
                 <Form.Label>firstName</Form.Label>
                 <Form.Control name="name" onChange={changeHandler}></Form.Control>
@@ -52,7 +53,7 @@ export default function Signup(props) {
             <Button variant="primary" onClick={regsiterHandler}>Register</Button>
 
         </Container>
-         */}
+        
     </div>
   )
 }
