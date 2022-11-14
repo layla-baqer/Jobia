@@ -4,12 +4,11 @@ const ProfilesController = require('../controllers/profiles')
 // We import our controller functions above
 
 // Require isLoggedIn Middleware.
-//const isLoggedIn = require("../helper/isLoggedIn");
+const isLoggedin = require("../helper/isLoggedin");
 
 // We define the routes and controllers
-//router.get('/tweets', tweetsController.getAllTweets)
-
-//router.get('/tweets/:_id', tweetsController.getTweet)
+ 
+router.get('/profiles/:_id',ProfilesController.getProfile)
 
 router.post('/profiles',ProfilesController.createProfile)
 
