@@ -135,10 +135,20 @@ async function deleteUser(req, res) {
     }
 }
 
+async function getAllUsers(req, res) {
+    try {
+        const allUsers = await User.find()
+        res.json(allUsers)
+    } catch (err) {
+        res.json(err)
+    }
+}
+
 module.exports = {
     createUser,
     createUserProfile,
     updateUser,
     deleteUser,
-    auth_login_post
+    auth_login_post,
+    getAllUsers
 }
