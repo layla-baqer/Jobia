@@ -15,6 +15,7 @@ function NavBar(props) {
       <li><Link to='/Signup'>Sigup</Link></li>
       <li><Link to='/Login'>Login</Link></li>
       <li><Link to='/About'>About</Link></li>
+      <li><Link to='/logout' onClick={props.onLogoutHandler}>Logout</Link></li>
 
 
 
