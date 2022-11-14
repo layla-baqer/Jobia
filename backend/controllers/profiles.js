@@ -30,32 +30,32 @@ async function createProfile(req,res) {
     // await newTweet.save()
 }
 
-// async function updateTweet(req, res) {
-//     try {
-//     // await Tweet.findOne({ _id: ... })
-//     let updatedTweet = await Tweet.findByIdAndUpdate(
-//         req.params._id,
-//         req.body //form body
-//         // {content: req.body.content}
-//     )
-//         res.status(200).json({message: 'Tweet updated Successfully!'})
-//     // res.json(updatedTweet)
-//     } catch (err) {
-//         res.json(err)
-//     }
-// }
+async function updateProfile(req, res) {
+    try {
+    // await Profile.findOne({ _id: ... })
+    let updatedProfile = await Profile.findByIdAndUpdate(
+        req.params._id,
+        req.body //form body
+        // {content: req.body.content}
+    )
+        res.status(200).json({message: 'Profile updated Successfully!'})
+    // res.json(updatedProfile)
+    } catch (err) {
+        res.json(err)
+    }
+}
 
 
-// async function deleteTweet(req,res) {
-//     try {
-//         await Tweet.findByIdAndDelete(
-//             req.params._id
-//         )
-//         res.json({message: 'Tweet Deleted Successfully'})
-//     } catch (err) {
-//         res.json(err)
-//     }
-// }
+async function deleteProfile(req,res) {
+    try {
+        await Profile.findByIdAndDelete(
+            req.params._id
+        )
+        res.json({message: 'Profile Deleted Successfully'})
+    } catch (err) {
+        res.json(err)
+    }
+}
 
 
 // async function getTweet(req,res) {
@@ -71,9 +71,9 @@ async function createProfile(req,res) {
 module.exports = {
     //getAllTweets,
     //getTweet,
-    createProfile 
-    //updateTweet,
-    //deleteTweet
+    createProfile,
+    updateProfile,
+    deleteProfile
 }
 
 

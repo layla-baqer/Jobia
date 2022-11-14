@@ -13,9 +13,9 @@ const ProfilesController = require('../controllers/profiles')
 
 router.post('/profiles',ProfilesController.createProfile)
 
-// router.put('/tweets/:_id', tweetsController.updateTweet)
+ router.put('/profiles/:_id',ProfilesController.updateProfile)
 
-// router.delete('/tweets/:_id', tweetsController.deleteTweet)
+router.delete('/profiles/:_id',ProfilesController.deleteProfile)
 
 
 
