@@ -3,10 +3,10 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 //Creating our Tweet Schema
 const ProfileModel = new Schema({
-    skills: {type: String, required: true},
-    jobs: {type: String, required: true},
-    intrests: {type: String, required: true},
-    experience: {type: String, required: true}
+    skills: {type: Array},
+    education: {type: Array},
+    intrests: {type: Array},
+    experience: {type: Array}
 }, {
     timestamps: true
 })
