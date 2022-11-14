@@ -49,7 +49,7 @@ function App() {
   const loginHandler = (cred) => {
     axios.post('http://localhost:4000/auth/login', cred)
     .then (res => {
-      console.log(res.data.token)
+      console.log('token:', res.data.token)
 
       // store the token in local storage (the user's storage)
       if(res.data.token != null) {
