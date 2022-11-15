@@ -1,7 +1,73 @@
-import React from 'react'
+import React, {useState} from 'react'
+import {Container, Form, Button} from "react-bootstrap";
 
-export default function Edit() {
+export default function Edit(props) {
+
+  const [editUser, setEditUser] = useState({});
+
+    const changeHandler = (e) => {
+        const user = { ...editUser };
+        user[e.target.name] = e.target.value;
+        console.log(user);
+        setEditUser(user);
+    }
+
+  const editHandler = () => {
+      props.edit(editUser)
+  }
+
   return (
-    <div>Edit</div>
+    <div>
+      <div>Edit</div>
+
+      <Container>
+            <Form.Group>
+                <Form.Label>firstName</Form.Label>
+                <Form.Control name="firstName" onChange={changeHandler}></Form.Control>
+            </Form.Group>
+
+            <Form.Group>
+                <Form.Label>lastName</Form.Label>
+                <Form.Control name="lastName" onChange={changeHandler}></Form.Control>
+            </Form.Group>
+
+            
+            <Form.Group>
+                <Form.Label>phone</Form.Label>
+                <Form.Control name="phone" onChange={changeHandler}></Form.Control>
+            </Form.Group>
+
+            <Form.Group>
+                <Form.Label>email</Form.Label>
+                <Form.Control name="email" onChange={changeHandler}></Form.Control>
+            </Form.Group>
+
+            <Form.Group>
+                <Form.Label>password</Form.Label>
+                <Form.Control name="password" type="password" onChange={changeHandler}></Form.Control>
+            </Form.Group>
+
+            <Form.Group>
+                <Form.Label>Title</Form.Label>
+                <Form.Control name="title" type="title" onChange={changeHandler}></Form.Control>
+            </Form.Group>
+
+            <Form.Group>
+                <Form.Label>Education</Form.Label>
+                <Form.Control name="education" type="education" onChange={changeHandler}></Form.Control>
+            </Form.Group>
+
+            <Form.Group>
+                <Form.Label>Skills</Form.Label>
+                <Form.Control name="skills" type="skills" onChange={changeHandler}></Form.Control>
+            </Form.Group>
+
+            <br></br>
+
+            <Button variant="primary" onClick={editHandler}>Save</Button>
+
+        </Container>
+
+    </div>
   )
 }
