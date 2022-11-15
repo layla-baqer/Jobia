@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import jwt_decode from 'jwt-decode';
+import Edit from '../Edit/Edit';
+import { Link, useParams } from 'react-router-dom'
 
 
 
@@ -55,7 +57,7 @@ export default function Profile() {
         <p>Phone: {userDetails.phone}</p>
         <p>Education: {userDetails.education}</p>
         <p>Skills: {userDetails.skills}</p>
-        {/* <Link to={`/profile/${tweet._id}`}>{tweet.name}</Link> */}
+        <Link to='/profile/edit'>Edit</Link>
       </div>
       
     :null}
