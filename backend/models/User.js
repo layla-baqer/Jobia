@@ -9,6 +9,9 @@ const UserModel = new Schema({
     phone: {type: Number, required: true},
     email: {type: String, required: true},
     password: {type: String, required: true},
+    title: {type: String},
+    education: {type: String},
+    skills: {type: String},
     // associate the Profile model
     profile: [{
         type: Schema.Types.ObjectId,

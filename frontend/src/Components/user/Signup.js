@@ -49,13 +49,18 @@ export default function Signup(props) {
             </Form.Group>
 
             <Form.Group>
-                <Form.Label>Skills</Form.Label>
-                <Form.Control name="Skills" type="Skills" onChange={changeHandler}></Form.Control>
+                <Form.Label>Title</Form.Label>
+                <Form.Control name="title" type="title" onChange={changeHandler}></Form.Control>
             </Form.Group>
 
             <Form.Group>
-                <Form.Label>Title</Form.Label>
-                <Form.Control name="title" type="title" onChange={changeHandler}></Form.Control>
+                <Form.Label>Education</Form.Label>
+                <Form.Control name="education" type="education" onChange={changeHandler}></Form.Control>
+            </Form.Group>
+
+            <Form.Group>
+                <Form.Label>Skills</Form.Label>
+                <Form.Control name="skills" type="skills" onChange={changeHandler}></Form.Control>
             </Form.Group>
 
             <br></br>

@@ -1,6 +1,7 @@
 // We import the Model to communicate with the Database
 const Job = require('../models/Job')
 
+
  
 
 async function createJob(req,res) {
@@ -43,16 +44,30 @@ async function deleteJob(req,res) {
 
 async function getJob(req,res) {
     try {
-        const Job = await Job.findById(req.params._id)
-        res.json(Job)
+        console.log(req.params)
+        const job = await Job.findById(req.params,{Job})
+        //console.log(Job)
+        
+        
+        res.json(job)
     } catch (err) {
         res.json(err)
     }
 }
 
+async function getAllJobs(req,res) {
+    const allJobs = await Job.find()
+    res.json(allJobs)
+}
+
+
+
+
+
 // Exporting/Sharing our functions
 module.exports = {
     getJob,
+    getAllJobs,
     createJob,
     updateJob,
     deleteJob
