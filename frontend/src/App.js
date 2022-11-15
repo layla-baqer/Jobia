@@ -84,7 +84,7 @@ function App() {
       />
       <div className="App">
       <Routes>
-        <Route path='/home' element={isAuth ? <Home allUsers={getAllUsers}/> : <Login login={loginHandler}/>}></Route>
+        <Route path='/home' element={isAuth ? <Home /> : <Login login={loginHandler}/>}></Route>
         <Route path='/edit/:userId' element={<Edit />}></Route>
         <Route path='/profile/:userId' element={<Profile />}></Route>
         <Route path='' element={<Home />}></Route>
