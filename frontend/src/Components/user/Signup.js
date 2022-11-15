@@ -48,6 +48,16 @@ export default function Signup(props) {
                 <Form.Control name="password" type="password" onChange={changeHandler}></Form.Control>
             </Form.Group>
 
+            <Form.Group>
+                <Form.Label>Skills</Form.Label>
+                <Form.Control name="Skills" type="Skills" onChange={changeHandler}></Form.Control>
+            </Form.Group>
+
+            <Form.Group>
+                <Form.Label>Title</Form.Label>
+                <Form.Control name="title" type="title" onChange={changeHandler}></Form.Control>
+            </Form.Group>
+
             <br></br>
 
             <Button variant="primary" onClick={regsiterHandler}>Register</Button>
