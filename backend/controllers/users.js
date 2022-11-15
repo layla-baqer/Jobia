@@ -135,10 +135,21 @@ async function deleteUser(req, res) {
     }
 }
 
+// async function getUserDetails(req,res) {
+//     try {
+//         const details = await Profile.findById(req.params._id)
+//         res.json(Profile)
+//     } catch (err) {
+//         res.json(err)
+//     }
+// }
+
+
 module.exports = {
     createUser,
     createUserProfile,
     updateUser,
     deleteUser,
-    auth_login_post
+    auth_login_post,
+   // getUserDetails
 }

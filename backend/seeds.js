@@ -3,16 +3,19 @@ require('./config/database')
 const Profile = require('./models/Profile')
 
 Profile.insertMany([
-    {skills:['Javascript','HTML'],
-    education:['Software engineering'],
-    intrests:['Coding'],
-    experience:['Backend Developer','Frontend developer']
+    {
+        title:'Software engineer',
+        skills:['Javascript','HTML'],
+        education:['Software engineering'],
+        intrests:['Coding'],
+        experience:['Backend Developer','Frontend developer']
          
     },
-    {skills:['AutoCad'],
-    education:['Electrical engineering'],
-    intrests:['Electrical Designing'],
-    experience:['Electrical Engineer']
+    {   title:'Electrical engineer',
+        skills:['AutoCad'],
+        education:['Electrical engineering'],
+        intrests:['Electrical Designing'],
+        experience:['Electrical Engineer']
          
          
     }  
