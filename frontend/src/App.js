@@ -1,6 +1,6 @@
 import './App.css';
 import NavBar from './Components/NavBar/NavBar' 
-import Home from './Components/userHome/userHome'
+import UserHome from './Components/UserHome/UserHome'
 import Edit from './Components/Edit/Edit'
 import Profile from './Components/Profile/Profile'
 import Details from './Components/Details/Details'
@@ -84,15 +84,14 @@ function App() {
       />
       <div className="App">
       <Routes>
-
-        <Route path='/user/home' element={isAuth ? <userHome /> : <Login login={loginHandler}/>}></Route>
+        <Route path='/user/home' element={isAuth ? <UserHome /> : <Login login={loginHandler}/>}></Route>
         <Route path='/edit/:userId' element={<Edit />}></Route>
         <Route path='/profile/:userId' element={<Profile />}></Route>
-        <Route path='' element={<Home />}></Route>
+        <Route path='' element={<UserHome />}></Route>
         <Route path='/signup' element={<Signup
         register={registerHandler}
         />}></Route>
-        <Route path='/login' element={isAuth ? <Home /> : <Login
+        <Route path='/login' element={isAuth ? <UserHome /> : <Login
         login={loginHandler}
         />}></Route>
       </Routes>

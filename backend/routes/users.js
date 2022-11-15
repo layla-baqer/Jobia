@@ -9,8 +9,7 @@ router.post('/users/:userId/profile', usersController.createUserProfile)
 router.put('/users/:_id', usersController.updateUser)
 router.delete('/users/:_id', usersController.deleteUser)
 router.post('/auth/login', usersController.auth_login_post)
-//GET USERS DETAILS
-// router.get('/users/:userId/details', usersController.getUserDetails)
+router.get('/users/:userId/details', usersController.getUserDetails)
 
 // export our routes
 module.exports = router
