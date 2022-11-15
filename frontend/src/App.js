@@ -89,6 +89,7 @@ function App() {
         <Route path='/edit' element={<Edit />}></Route>
         <Route path='/profile' element={<Profile />}></Route>
         <Route path='' element={<UserHome />}></Route>
+        <Route path='/job/:id' element={<Details />}></Route>
         <Route path='/signup' element={<Signup
         register={registerHandler}
         />}></Route>
