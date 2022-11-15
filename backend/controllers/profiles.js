@@ -41,15 +41,27 @@ async function deleteProfile(req,res) {
 }
 
 
+// async function getProfile(req,res) {
+//     try {
+//         const Profile = await Profile.findById(req.params._id)
+//         res.json(Profile)
+//     } catch (err) {
+//         res.json(err)
+//     }
+// }
+
+
+
+
+//function to return a profile by it's id
 async function getProfile(req,res) {
     try {
-        const Profile = await Profile.findById(req.params._id)
-        res.json(Profile)
+        const profile = await Profile.findById(req.params._id)
+        res.json(profile)
     } catch (err) {
         res.json(err)
     }
 }
-
 // Exporting/Sharing our functions
 module.exports = {
     getProfile,
