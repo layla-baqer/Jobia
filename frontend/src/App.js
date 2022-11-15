@@ -72,6 +72,10 @@ function App() {
     setUser(null);
   }
 
+  // const getAllUsers = () => {
+
+  // }
+
   return (
     <Router>
     <NavBar
@@ -81,6 +85,7 @@ function App() {
       />
       <div className="App">
       <Routes>
+
         <Route path='/user/home' element={isAuth ? <userHome /> : <Login login={loginHandler}/>}></Route>
         <Route path='/edit/:userId' element={<Edit />}></Route>
         <Route path='/profile/:userId' element={<Profile />}></Route>
