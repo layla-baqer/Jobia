@@ -17,6 +17,7 @@ app.use(express.urlencoded({extended: false}))
 //......
 app.use('/', require('./routes/users'))
  app.use('/', require('./routes/profiles'))
+ app.use('/', require('./routes/jobs'))
 //......
 
 // Listening on port
