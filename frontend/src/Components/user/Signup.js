@@ -60,7 +60,7 @@ export default function Signup(props) {
 
             <Form.Group>
                 <Form.Label>Skills</Form.Label>
-                <Form.Control name="Skills" type="Skills" onChange={changeHandler}></Form.Control>
+                <Form.Control name="skills" type="skills" onChange={changeHandler}></Form.Control>
             </Form.Group>
 
             <br></br>
