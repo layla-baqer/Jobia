@@ -6,7 +6,7 @@ import Edit from './Components/Edit/Edit'
 import Profile from './Components/Profile/Profile'
 import Details from './Components/Details/Details'
 import About from './Components/About/About'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom'
 import Signup from './Components/user/Signup';
 import Login from './Components/user/Login'
 import axios from 'axios';
@@ -72,8 +72,8 @@ function App() {
     setUser(null);
   }
 
-  // const getAllUsers = () => {
-
+  // const Profile = () => {
+  //   let {userId} = useParams()
   // }
 
   return (
@@ -86,8 +86,8 @@ function App() {
       <div className="App">
       <Routes>
         <Route path='/user/home' element={isAuth ? <UserHome /> : <Login login={loginHandler}/>}></Route>
-        <Route path='/edit/:userId' element={<Edit />}></Route>
-        <Route path='/profile/:userId' element={<Profile />}></Route>
+        <Route path='/edit' element={<Edit />}></Route>
+        <Route path='/profile' element={<Profile />}></Route>
         <Route path='' element={<UserHome />}></Route>
         <Route path='/signup' element={<Signup
         register={registerHandler}

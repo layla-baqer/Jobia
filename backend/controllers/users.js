@@ -1,5 +1,5 @@
 const User = require('../models/User')
-const Profile = require('../models/Profile')
+const Jobs = require('../models/Job')
 const { findOne } = require('../models/Profile')
 
 // require bcrypt
@@ -140,7 +140,7 @@ async function deleteUser(req, res) {
 
 async function getUserDetails(req,res) {
     try {
-        const details = await Profile.findById(req.params._id)
+        const details = await User.findById(req.params.userId)
         res.json(details)
     } catch (err) {
         res.json(err)
@@ -154,5 +154,5 @@ module.exports = {
     updateUser,
     deleteUser,
     auth_login_post,
-   getUserDetails
+    getUserDetails
 }
