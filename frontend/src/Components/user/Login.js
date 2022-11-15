@@ -22,7 +22,7 @@ function Login(props) {
         <h1>Login</h1>
 
         <Container>
-            <Form.Group>
+            <Form.Group >
                 <Form.Label>email: </Form.Label>
                 <Form.Control name='email' type='email' onChange={changeHandler}></Form.Control>
             </Form.Group>
