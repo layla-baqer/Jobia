@@ -23,7 +23,10 @@ async function createUser(req, res) {
         lastName: req.body.lastName,
         phone: req.body.phone,
         email: req.body.email,
-        password: hashedPassword
+        password: hashedPassword,
+        title: req.body.title,
+        education: req.body.education,
+        skills: req.body.skills
         })
     
         res.json(newUser)
@@ -135,14 +138,14 @@ async function deleteUser(req, res) {
     }
 }
 
-// async function getUserDetails(req,res) {
-//     try {
-//         const details = await Profile.findById(req.params._id)
-//         res.json(Profile)
-//     } catch (err) {
-//         res.json(err)
-//     }
-// }
+async function getUserDetails(req,res) {
+    try {
+        const details = await Profile.findById(req.params._id)
+        res.json(details)
+    } catch (err) {
+        res.json(err)
+    }
+}
 
 
 module.exports = {
@@ -151,5 +154,5 @@ module.exports = {
     updateUser,
     deleteUser,
     auth_login_post,
-   // getUserDetails
+   getUserDetails
 }
