@@ -1,6 +1,7 @@
 import './App.css';
 import NavBar from './Components/NavBar/NavBar' 
 import Home from './Components/userHome/userHome'
+import AdminHome from './Components/AdminHome/AdminHome'
 import Edit from './Components/Edit/Edit'
 import Profile from './Components/Profile/Profile'
 import Details from './Components/Details/Details'
