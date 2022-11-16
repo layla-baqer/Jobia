@@ -45,10 +45,8 @@ async function deleteJob(req,res) {
 async function getJob(req,res) {
     try {
         console.log(req.params)
-        const job = await Job.findById(req.params,{Job})
-        //console.log(Job)
-        
-        
+        const job = await Job.findById(req.params._id)
+        // console.log(job)
         res.json(job)
     } catch (err) {
         res.json(err)
