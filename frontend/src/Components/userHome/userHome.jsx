@@ -3,6 +3,7 @@ import axios from 'axios'
 import jwt_decode from 'jwt-decode';
 import { Link, useParams } from 'react-router-dom'
 import { Button } from 'react-bootstrap';
+import './UserHome.css'
 
 
 
@@ -31,7 +32,7 @@ export default function UserHome() {
 
   return (
      <div>
-      <div>Jobs</div>
+      <div className='title'>Jobs</div>
 
       {jobs.length ? jobs.map(job =>
         <div key={job._id}>

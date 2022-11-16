@@ -2,23 +2,24 @@
 
 .login, .signup {
     /* position: absolute; */
-    width: 416px;
+    width: 400px;
     border-bottom: 2px solid #000000;
     /* margin: 80px auto 60px 470px; */
     padding-bottom: 15px;
+    margin-bottom: 40px;
     font-size: 25px;
 }
 
 .jobia-title {
     font-family: 'Advent Pro', sans-serif;
-    font-size: 50px;
+    font-size: 60px;
 }
 
-.login-container {
+.login-container, .signup-container {
     display: flex;
 }
 
-.login-center {
+.center-container {
 
 }
 
@@ -26,11 +27,28 @@
     width: 50%;
 }
 
-.email-label {
-    margin-left: -130px;
+.label {
+    text-align: left;
     font-size: 18px;
 }
-.password-label {
-    margin-left: -98px;
-    font-size: 18px;
+
+input {
+    width: 400px;
+    height: 40px;
+    background: #F4F6F5;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.login-button, .signup-button {
+    width: 400px;
+    height: 40px;
+    background: #000000;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-weight: 550;
+    font-size: 20px;
+    margin-bottom: 30px;
+    cursor: pointer;
 }

@@ -22,7 +22,7 @@ function NavBar(props) {
       <div>
        <ul className="navbar-ul">
         <div><Link to="/Signup">Signup</Link></div>
-        <div><Link to="/Login">Lognin</Link></div>
+        <div><Link to="/Login">Login</Link></div>
        </ul>
       </div>
      )}
