@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;300&display=swap');
+
+.login, .signup {
+    /* position: absolute; */
+    width: 416px;
+    border-bottom: 2px solid #000000;
+    margin: 80px auto 60px 470px;
+    padding-bottom: 15px;
+}
+
+.login-container, .signup-container {
+    
+}
+
+.jobia-title {
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 50px;
+}

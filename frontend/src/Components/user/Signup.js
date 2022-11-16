@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {Container, Form, Button} from "react-bootstrap";
+import './user.css'
 
 export default function Signup(props) {
 
@@ -17,8 +18,9 @@ export default function Signup(props) {
     }
 
   return (
-    <div>
-        <h1>Signup</h1>
+    <div className='signup-container'>
+        <h1 className='jobia-title'>JOBIA</h1>
+        <h3 className='signup'>Signup</h3>
 
 
         <Container>

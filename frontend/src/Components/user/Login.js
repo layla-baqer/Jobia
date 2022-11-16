@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {Container, Form, Button} from 'react-bootstrap'
 // the tags used Container, Button, Form.Group ... are from the bootstrap library to make things look good
+import './user.css'
 
 function Login(props) {
 
@@ -18,8 +19,9 @@ function Login(props) {
     }
 
   return (
-    <div>
-        <h1>Login</h1>
+    <div className='login-container'>
+        <h1 className='jobia-title'>JOBIA</h1>
+        <h3 className='login'>Login</h3>
 
         <Container>
             <Form.Group >
