@@ -19,11 +19,11 @@
     display: flex;
 }
 
-.center-container {
+.login-center-container, .signup-center-container {
 
 }
 
-.right-container, .left-container {
+.login-right-container, .login-left-container, .signup-right-container, .signup-left-container {
     width: 50%;
 }
 

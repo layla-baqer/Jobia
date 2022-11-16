@@ -20,8 +20,8 @@ function Login(props) {
 
   return (
     <div className='login-container'>
-        <div className='right-container'></div>
-        <div className='center-container'>
+        <div className='login-right-container'></div>
+        <div className='login-center-container'>
             <h1 className='jobia-title'>JOBIA</h1>
             <h3 className='login'>Login</h3>
 
@@ -41,7 +41,7 @@ function Login(props) {
                 <Button className='login-button' variant='primary' onClick={loginHandler}>Login</Button>
             </Container>
         </div>
-        <div className='left-container'></div>
+        <div className='signup-left-container'></div>
     </div>
   )
 }

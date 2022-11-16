@@ -41,3 +41,136 @@
 Form.Label {
  background-color: aqua;
 }
+
+/* ************************************************* */
+
+.title {
+  font-family: 'Advent Pro', sans-serif;
+  font-size: 60px;
+  text-align: left;
+  margin-left: 60px;
+}
+
+.main-container {
+  display: flex;
+}
+
+.center-container {
+
+}
+
+.right-container, .left-container {
+  width: 50%;
+}
+
+.user-home-line {
+  width: 700px;
+  border-bottom: 2px solid #000000;
+  padding-bottom: 15px;
+  margin-bottom: 40px;
+}
+
+.job-box {
+  width: 700px;
+  height: 100px;
+  margin-bottom: 15px;
+  background: #F4F6F5;
+  border: 2px solid #cca1f0;
+  border-radius: 5px;
+  text-align: left;
+}
+
+/* ************************************************* */
+
+.job-title, .company-name {
+  margin-left: 30px;
+}
+.job-title {
+  font-weight: 550;
+  font-size: 18px;
+}
+
+.desc-container {
+  text-align: left;
+  width: 700px;
+}
+
+.job-desc-name {
+  font-weight: 550;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* ************************************************* */
+
+.user-profile-line {
+  width: 500px;
+  border-bottom: 2px solid #000000;
+  padding-bottom: 15px;
+  margin-bottom: 40px;
+}
+
+.user-details-container {
+  text-align: left;
+}
+
+.user-title {
+  font-weight: 550;
+  font-size: 17px;
+}
+.user-detail {
+  font-size: 16px;
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+
+.edit-button {
+  width: 350px;
+  height: 35px;
+  background: #cca1f0;
+  border-radius: 10px;
+  border: none;
+  color: #222222;
+  font-weight: 550;
+  font-size: 18px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.edit-button-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* ************************************************* */
+
+.form-container {
+  display: grid;
+}
+
+.form-line {
+  width: 400px;
+  border-bottom: 2px solid #000000;
+  padding-bottom: 15px;
+  margin-bottom: 40px;
+}
+
+.edit-save-button {
+  width: 400px;
+  height: 40px;
+  background: #000000;
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-weight: 550;
+  font-size: 20px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+/* ************************************************* */
+
+.about-desc {
+  width: 700px;
+  font-size: 20px;
+  text-align: justify;
+}

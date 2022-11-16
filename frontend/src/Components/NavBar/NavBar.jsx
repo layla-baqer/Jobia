@@ -14,15 +14,14 @@ function NavBar(props) {
           <div><Link to={'/profile'}>Profile</Link></div>
           <div><Link to='/about'>About</Link></div>
 
-          <div><Link to="/logout" onClick={props.onLogoutHandler}>Logout</Link></div>
-          {/* {props.user ? "Welcome, " + props.user.user.firstName : null} */}
+          <div><Link onClick={props.onLogoutHandler} to="/login">Logout</Link></div>
           </ul>
         </div>
      ) : (
       <div>
        <ul className="navbar-ul">
-        <div><Link to="/Signup">Signup</Link></div>
-        <div><Link to="/Login">Login</Link></div>
+        <div><Link to="/signup">Signup</Link></div>
+        <div><Link to="/login">Login</Link></div>
        </ul>
       </div>
      )}

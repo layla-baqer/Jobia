@@ -4,12 +4,14 @@ import jwt_decode from 'jwt-decode';
 import { Link, useParams } from 'react-router-dom'
 import { Button } from 'react-bootstrap';
 import Popup from 'reactjs-popup';
+import './Details.css'
 
 
 
 export default function Details() {
   const [jobDetails, setJobDetails] = useState({})
   const [jobId, setJobId] = useState([])
+  const [openModal, setOpenModal] = useState(false)
 
   let { id } = useParams();
   console.log(id);
@@ -34,18 +36,36 @@ export default function Details() {
 
   return (
      <div>
-      <div>Description</div>
-      {jobDetails ?
-        <div key={jobDetails._id}>
-           <p>Job Description:{jobDetails.description}</p>
-           <Popup trigger={<button>Apply!</button>} position="right center">
-             <div>Thank you!
-             Your job application has been sent successfully.</div>
-           </Popup>
+      <div className='title'>Detail</div>
+
+      <div className='main-container'>
+        <div className='right-container'></div>
+        <div className='center-container'>
+          <div className='user-home-line'></div>
+            {jobDetails ?
+              <div className='desc-container' key={jobDetails._id}>
+                <div className='job-desc-name'>Job Description</div>
+                <div>{jobDetails.description}</div>
+                {/* <Popup trigger={<button>Apply!</button>}>
+                  <div>Thank you!
+                  Your job application has been sent successfully.</div>
+                </Popup> */}
+                <div className='modal-button-container'><button className='open-modal-button' onClick={()=>{setOpenModal(true)}}>Apply!</button></div>
+                {openModal && <>
+                <div className='modal-background'>
+                  <div className='modal-container'>
+                    <div className='modal-header'><button className='close-modal-button' onClick={()=>{setOpenModal(false)}}>X</button></div>
+                    <div className='modal-message'>Thank you!
+                    Your job application has been sent successfully.</div>
+                    </div>
+                  </div>
+                  </>
+                  }
+                </div>
+            :null}
         </div>
-      :null}
-       
-         
+        <div className='left-container'></div>
+      </div>
      </div>  
   )
 }
