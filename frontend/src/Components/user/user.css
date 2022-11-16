@@ -4,15 +4,33 @@
     /* position: absolute; */
     width: 416px;
     border-bottom: 2px solid #000000;
-    margin: 80px auto 60px 470px;
+    /* margin: 80px auto 60px 470px; */
     padding-bottom: 15px;
-}
-
-.login-container, .signup-container {
-    
+    font-size: 25px;
 }
 
 .jobia-title {
     font-family: 'Advent Pro', sans-serif;
     font-size: 50px;
+}
+
+.login-container {
+    display: flex;
+}
+
+.login-center {
+
+}
+
+.right-container, .left-container {
+    width: 50%;
+}
+
+.email-label {
+    margin-left: -130px;
+    font-size: 18px;
+}
+.password-label {
+    margin-left: -98px;
+    font-size: 18px;
 }
