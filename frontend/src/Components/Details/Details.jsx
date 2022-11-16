@@ -3,6 +3,7 @@ import axios from 'axios'
 import jwt_decode from 'jwt-decode';
 import { Link, useParams } from 'react-router-dom'
 import { Button } from 'react-bootstrap';
+import Popup from 'reactjs-popup';
 
 
 
@@ -37,7 +38,10 @@ export default function Details() {
       {jobDetails ?
         <div key={jobDetails._id}>
            <p>Job Description:{jobDetails.description}</p>
-           <Button>Apply!</Button>
+           <Popup trigger={<button>Apply!</button>} position="right center">
+             <div>Thank you!
+             Your job application has been sent successfully.</div>
+           </Popup>
         </div>
       :null}
        
