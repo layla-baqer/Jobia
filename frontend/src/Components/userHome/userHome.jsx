@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import jwt_decode from 'jwt-decode';
 import { Link, useParams } from 'react-router-dom'
+import { Button } from 'react-bootstrap';
 
 
 
@@ -39,6 +40,7 @@ export default function UserHome() {
             <Link to={`/job/${job._id}`}>{job.title}</Link>
           </p>
           <p>Company Name: {job.companyName}</p>
+          
         </div>
         )
       :null}
@@ -46,4 +48,4 @@ export default function UserHome() {
   )
 }
 
-//export default UserHome;
+ 
