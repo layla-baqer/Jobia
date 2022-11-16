@@ -21,24 +21,24 @@ function Login(props) {
   return (
     <div className='login-container'>
         <div className='right-container'></div>
-        <div className='login-center'>
+        <div className='center-container'>
             <h1 className='jobia-title'>JOBIA</h1>
             <h3 className='login'>Login</h3>
 
             <Container>
                 <Form.Group >
-                    <div className='email-label'><Form.Label>Email </Form.Label></div>
-                    <div className='email-box'><Form.Control name='email' type='email' onChange={changeHandler}></Form.Control></div>
+                    <div className='label'><Form.Label>Email </Form.Label></div>
+                    <div><Form.Control name='email' type='email' onChange={changeHandler}></Form.Control></div>
                 </Form.Group>
 
                 <Form.Group>
-                <div className='password-label'><Form.Label>Password </Form.Label></div>
-                <div className='email-box'><Form.Control name='password' type='password' onChange={changeHandler}></Form.Control></div>
+                <div className='label'><Form.Label>Password </Form.Label></div>
+                <div><Form.Control name='password' type='password' onChange={changeHandler}></Form.Control></div>
                 </Form.Group>
 
                 <br/>
 
-                <Button variant='primary' onClick={loginHandler}>Login</Button>
+                <Button className='login-button' variant='primary' onClick={loginHandler}>Login</Button>
             </Container>
         </div>
         <div className='left-container'></div>
