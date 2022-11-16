@@ -19,8 +19,8 @@ export default function Signup(props) {
 
   return (
     <div className='signup-container'>
-        <div className='right-container'></div>
-        <div className='center-container'>
+        <div className='signup-right-container'></div>
+        <div className='signup-center-container'>
             <h1 className='jobia-title'>JOBIA</h1>
             <h3 className='signup'>Signup</h3>
 
@@ -73,7 +73,7 @@ export default function Signup(props) {
 
             </Container>
         </div>
-        <div className='left-container'></div>
+        <div className='signup-left-container'></div>
     </div>
   )
 }

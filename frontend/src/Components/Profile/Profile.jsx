@@ -47,21 +47,46 @@ export default function Profile() {
 
   return (
     <div>
-      <div>Profile</div>
+      <div className='title'>Profile</div>
 
-      {userDetails ?
-      <div key={userDetails._id}>
-        <p>Name: {userDetails.firstName} {userDetails.lastName}</p>
-        <p>Title: {userDetails.title}</p>
-        <p>Email: {userDetails.email}</p>
-        <p>Phone: {userDetails.phone}</p>
-        <p>Education: {userDetails.education}</p>
-        <p>Skills: {userDetails.skills}</p>
-        <Link to='/profile/edit'>Edit</Link>
+      <div className='main-container'>
+        <div className='right-container'></div>
+        <div className='center-container'>
+          <div className='user-profile-line'></div>
+        {userDetails ?
+          <div className='user-details-container' key={userDetails._id}>
+            <div>
+              <div className='user-title'>Name:</div>
+              <div className='user-detail'>{userDetails.firstName} {userDetails.lastName}</div>
+            </div>
+            <div>
+              <div className='user-title'>Title:</div>
+              <div className='user-detail'>{userDetails.title}</div>
+            </div>
+            <div>
+              <div className='user-title'>Email:</div>
+              <div className='user-detail'>{userDetails.email}</div>
+            </div>
+            <div>
+              <div className='user-title'>Phone:</div>
+              <div className='user-detail'>{userDetails.phone}</div>
+            </div>
+            <div>
+              <div className='user-title'>Education:</div>
+              <div className='user-detail'>{userDetails.education}</div>
+            </div>
+            <div>
+              <div className='user-title'>Skills:</div>
+              <div className='user-detail'>{userDetails.skills}</div>
+            </div>
+            <div className='edit-button-container'>
+              <Link to='/profile/edit'><button className='edit-button'>Edit</button></Link>
+            </div>
+          </div>
+        :null}
       </div>
-      
-    :null}
-
+      <div className='left-container'></div>
+      </div>
     </div>
   )
 }
