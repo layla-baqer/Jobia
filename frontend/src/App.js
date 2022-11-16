@@ -65,16 +65,6 @@ function App() {
     })
   }
 
-  // const editHandler = (user) => {
-  //   axios.put(`http://localhost:4000/users${user.user.id}`, user)
-  //   .then (res => {
-  //     console.log(res)
-  //   })
-  //   .catch(err => {
-  //     console.log(err)
-  //   })
-  // }
-
   const onLogoutHandler = (e) => {
     e.preventDefault();
     localStorage.removeItem("token");
@@ -97,9 +87,7 @@ function App() {
       <Routes>
         <Route path='/user/home' element={isAuth ? <UserHome /> : <Login login={loginHandler}/>}></Route>
         <Route path='/profile' element={<Profile />}></Route>
-        <Route path='/profile/edit' element={<Edit
-        // edit={editHandler}
-        />}></Route>
+        <Route path='/profile/edit' element={<Edit />}></Route>
         <Route path='' element={<UserHome />}></Route>
         <Route path='/signup' element={<Signup
         register={registerHandler}
