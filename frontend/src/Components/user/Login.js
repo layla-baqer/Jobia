@@ -20,25 +20,28 @@ function Login(props) {
 
   return (
     <div className='login-container'>
-        <h1 className='jobia-title'>JOBIA</h1>
-        <h3 className='login'>Login</h3>
+        <div className='right-container'></div>
+        <div className='login-center'>
+            <h1 className='jobia-title'>JOBIA</h1>
+            <h3 className='login'>Login</h3>
 
-        <Container>
-            <Form.Group >
-                <Form.Label>email: </Form.Label>
-                <Form.Control name='email' type='email' onChange={changeHandler}></Form.Control>
-            </Form.Group>
+            <Container>
+                <Form.Group >
+                    <div className='email-label'><Form.Label>Email </Form.Label></div>
+                    <div className='email-box'><Form.Control name='email' type='email' onChange={changeHandler}></Form.Control></div>
+                </Form.Group>
 
-            <Form.Group>
-                <Form.Label>Password: </Form.Label>
-                <Form.Control name='password' type='password' onChange={changeHandler}></Form.Control>
-            </Form.Group>
+                <Form.Group>
+                <div className='password-label'><Form.Label>Password </Form.Label></div>
+                <div className='email-box'><Form.Control name='password' type='password' onChange={changeHandler}></Form.Control></div>
+                </Form.Group>
 
-            <br/>
+                <br/>
 
-            <Button variant='primary' onClick={loginHandler}>Login</Button>
-        </Container>
-
+                <Button variant='primary' onClick={loginHandler}>Login</Button>
+            </Container>
+        </div>
+        <div className='left-container'></div>
     </div>
   )
 }
