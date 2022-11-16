@@ -96,6 +96,7 @@ function App() {
         <Route path='/login' element={isAuth ? <UserHome /> : <Login
         login={loginHandler}
         />}></Route>
+        <Route path='/about' element={<About />}></Route>
       </Routes>
       </div>
   </Router>
