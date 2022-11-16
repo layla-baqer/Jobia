@@ -40,7 +40,6 @@ export default function UserHome() {
             <Link to={`/job/${job._id}`}>{job.title}</Link>
           </p>
           <p>Company Name: {job.companyName}</p>
-          
         </div>
         )
       :null}
