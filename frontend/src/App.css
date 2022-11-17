@@ -183,6 +183,23 @@ Form.Label {
   background: #e2184b;
 }
 
+.confirm-delete-button {
+  width: 200px;
+  height: 30px;
+  background: #e2184b;
+  border-radius: 10px;
+  border: none;
+  color: #FFFFFF;
+  font-weight: 550;
+  font-size: 18px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+#modal-container-id {
+  height: 250px;
+}
+
 /* ************************************************* */
 
 .about-desc {

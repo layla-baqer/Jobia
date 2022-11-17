@@ -12,6 +12,7 @@ export default function Edit(props) {
   const [userDetails, setUserDetails] = useState([])
   const [user, setUser] = useState({})
   const navigate = useNavigate();
+  const [openModal, setOpenModal] = useState(false)
 
   useEffect(() => {
     let token = localStorage.getItem('token')
@@ -130,11 +131,24 @@ const getUserDetails = (userId) => {
                   {/* <Button className='edit-save-button' variant="primary" onClick={editHandler}>Save</Button> */}
                   <Link to='/profile'><Button className='edit-save-button' variant="primary" onClick={editHandler}>Save</Button></Link>
 
-                  <Link to='/login'><Button className='edit-delete-button' variant="primary" onClick={
-                    props.onLogoutHandler
-                    &&
-                    deleteHandler
-                    }>Delete User</Button></Link>
+
+                  <div className='modal-button-container'><button className='edit-delete-button' onClick={()=>{setOpenModal(true)}}>Delete User</button></div>
+                  {openModal && <>
+                  <div className='modal-background'>
+                  <div className='modal-container' id='modal-container-id'>
+                    <div className='modal-header'><button className='close-modal-button' onClick={()=>{setOpenModal(false)}}>X</button></div>
+                    <div className='modal-message'>Are you sure you want to delete this user? This action cannot be undone.</div>
+                    <div className='model-footer'>
+                      <Link to='/login'><Button className='confirm-delete-button' variant="primary" onClick={
+                      props.onLogoutHandler
+                      &&
+                      deleteHandler
+                      }>Confirm</Button></Link>
+                    </div>
+                    </div>
+                  </div>
+                  </>
+                  }
 
               </Container>
             </div>
