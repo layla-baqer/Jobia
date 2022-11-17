@@ -1,11 +1,13 @@
 import React, {useState} from 'react'
 import {Container, Form, Button} from 'react-bootstrap'
-// the tags used Container, Button, Form.Group ... are from the bootstrap library to make things look good
+import { useNavigate } from "react-router-dom";
 import './user.css'
 
 function Login(props) {
 
     const [newUser, setNewUser] = useState({})
+    const navigate = useNavigate();
+
     // e is event
     const changeHandler = (e) => {
         const user = {...newUser}
@@ -16,6 +18,7 @@ function Login(props) {
 
     const loginHandler = () => {
         props.login(newUser)
+        navigate("/user/home");
     }
 
   return (

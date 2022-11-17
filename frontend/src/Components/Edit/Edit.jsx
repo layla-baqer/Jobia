@@ -3,13 +3,15 @@ import axios from 'axios'
 import jwt_decode from 'jwt-decode';
 import {Container, Form, Button} from "react-bootstrap";
 import { Link, useParams } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
 
-export default function Edit() {
+export default function Edit(props) {
 
   const [editUser, setEditUser] = useState({});
   const [userDetails, setUserDetails] = useState([])
   const [user, setUser] = useState({})
+  const navigate = useNavigate();
 
   useEffect(() => {
     let token = localStorage.getItem('token')
@@ -56,6 +58,19 @@ const getUserDetails = (userId) => {
         console.log(err)
       })
 
+    }
+  }
+
+  const deleteHandler = () => {
+    if (user) {
+      axios.delete(`http://localhost:4000/users/${user.user.id}`)
+      .then (res => {
+        console.log(res)
+        props.setIsAuth(false)
+      })
+      .catch(err => {
+        console.log(err)
+      })
     }
   }
 
@@ -114,6 +129,12 @@ const getUserDetails = (userId) => {
 
                   {/* <Button className='edit-save-button' variant="primary" onClick={editHandler}>Save</Button> */}
                   <Link to='/profile'><Button className='edit-save-button' variant="primary" onClick={editHandler}>Save</Button></Link>
+
+                  <Link to='/login'><Button className='edit-delete-button' variant="primary" onClick={
+                    props.onLogoutHandler
+                    &&
+                    deleteHandler
+                    }>Delete User</Button></Link>
 
               </Container>
             </div>
