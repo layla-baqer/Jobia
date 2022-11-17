@@ -2,6 +2,21 @@
 
 .login, .signup {
     /* position: absolute; */
+ 
+    width: 416px;
+    border-bottom: 2px solid #000000;
+    margin: 80px auto 60px 470px;
+    padding-bottom: 15px;
+}
+
+.login-container, .signup-container {
+    
+}
+
+.jobia-title {
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 50px;
+ 
     width: 400px;
     border-bottom: 2px solid #000000;
     /* margin: 80px auto 60px 470px; */
@@ -51,4 +66,5 @@ input {
     font-size: 20px;
     margin-bottom: 30px;
     cursor: pointer;
+ 
 }

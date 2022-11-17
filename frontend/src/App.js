@@ -89,6 +89,12 @@ function App() {
       <div className="App">
       <Routes>
         <Route path='/user/home' element={isAuth ? <UserHome /> : <Login login={loginHandler}/>}></Route>
+ 
+        <Route path='/profile' element={<Profile />}></Route>
+        <Route path='/profile/edit' element={<Edit />}></Route>
+        <Route path='' element={isAuth ? <UserHome /> : <Login login={loginHandler}/>}></Route>
+        <Route path='/job/:id' element={<Details />}></Route>
+ 
         <Route path='/profile' element={isAuth ? <Profile /> : <Login
         login={loginHandler}
         />}></Route>
@@ -102,6 +108,7 @@ function App() {
         <Route path='/job/:id' element={isAuth ? <Details /> : <Login
         login={loginHandler}
         />}></Route>
+ 
         <Route path='/signup' element={<Signup
         register={registerHandler}
         />}></Route>
