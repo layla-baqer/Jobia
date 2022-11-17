@@ -31,19 +31,26 @@ export default function UserHome() {
 
   return (
      <div>
-      <div>Jobs</div>
+      <div className='title'>Jobs</div>
 
-      {jobs.length ? jobs.map(job =>
-        <div key={job._id}>
-          <p>
-            Job title: <Link to={`/job/${job._id}`}> {job.jobTitle} </Link>
-            <Link to={`/job/${job._id}`}>{job.title}</Link>
-          </p>
-          <p>Company Name: {job.companyName}</p>
+      <div className='main-container'>
+        <div className='right-container'></div>
+        <div className='center-container'>
+          <div className='user-home-line'></div>
+          {jobs.length ? jobs.map(job =>
+            <div className='job-box' key={job._id}>
+              <p className='job-title'>
+                Job title: <Link to={`/job/${job._id}`}> {job.jobTitle} </Link>
+                <Link to={`/job/${job._id}`}>{job.title}</Link>
+              </p>
+              <p className='company-name'>Company Name: {job.companyName}</p>
+            </div>
+            )
+          :null}
         </div>
-        )
-      :null}
-     </div>  
+        <div className='left-container'></div>
+      </div>
+     </div>
   )
 }
 

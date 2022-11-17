@@ -1,4 +1,5 @@
 const express = require('express')
+const path = require('path')
 
 // Initializing our application
 const app = express()
@@ -13,12 +14,19 @@ const cors = require('cors')
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
+// app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
+app.use(express.static(path.join(__dirname, 'build')));
 
 //......
 app.use('/', require('./routes/users'))
  app.use('/', require('./routes/profiles'))
  app.use('/', require('./routes/jobs'))
 //......
+
+// REACT below
+app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 // Listening on port
 // we made it 4000 because react is on 3000 so we don't want them to interfere

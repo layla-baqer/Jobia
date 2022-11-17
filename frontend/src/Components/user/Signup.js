@@ -1,10 +1,16 @@
 import React, {useState} from 'react'
 import {Container, Form, Button} from "react-bootstrap";
-import s
+ 
+import './user.css'
+import { useNavigate } from "react-router-dom";
+
+ 
 
 export default function Signup(props) {
 
     const [newUser, setNewUser] = useState({});
+    const navigate = useNavigate();
+
 
     const changeHandler = (e) => {
         const user = { ...newUser };
@@ -15,61 +21,66 @@ export default function Signup(props) {
 
     const regsiterHandler = () => {
         props.register(newUser)
+        navigate("/login");
     }
 
   return (
-    <div>
-        <h1>Signup</h1>
+    <div className='signup-container'>
+        <div className='signup-right-container'></div>
+        <div className='signup-center-container'>
+            <h1 className='jobia-title'>JOBIA</h1>
+            <h3 className='signup'>Signup</h3>
 
 
-        <Container>
-            <Form.Group>
-                <Form.Label>firstName</Form.Label>
-                <Form.Control name="firstName" onChange={changeHandler}></Form.Control>
-            </Form.Group>
+            <Container>
+                <Form.Group>
+                    <div className='label'><Form.Label>First Name</Form.Label></div>
+                    <Form.Control name="firstName" onChange={changeHandler}></Form.Control>
+                </Form.Group>
 
-            <Form.Group>
-                <Form.Label>lastName</Form.Label>
-                <Form.Control name="lastName" onChange={changeHandler}></Form.Control>
-            </Form.Group>
+                <Form.Group>
+                <div className='label'><Form.Label>Last Name</Form.Label></div>
+                    <Form.Control name="lastName" onChange={changeHandler}></Form.Control>
+                </Form.Group>
 
-            
-            <Form.Group>
-                <Form.Label>phone</Form.Label>
-                <Form.Control name="phone" onChange={changeHandler}></Form.Control>
-            </Form.Group>
+                
+                <Form.Group>
+                <div className='label'><Form.Label>Phone</Form.Label></div>
+                    <Form.Control name="phone" onChange={changeHandler}></Form.Control>
+                </Form.Group>
 
-            <Form.Group>
-                <Form.Label>email</Form.Label>
-                <Form.Control name="email" onChange={changeHandler}></Form.Control>
-            </Form.Group>
+                <Form.Group>
+                <div className='label'><Form.Label>Email</Form.Label></div>
+                    <Form.Control name="email" onChange={changeHandler}></Form.Control>
+                </Form.Group>
 
-            <Form.Group>
-                <Form.Label>password</Form.Label>
-                <Form.Control name="password" type="password" onChange={changeHandler}></Form.Control>
-            </Form.Group>
+                <Form.Group>
+                <div className='label'><Form.Label>Password</Form.Label></div>
+                    <Form.Control name="password" type="password" onChange={changeHandler}></Form.Control>
+                </Form.Group>
 
-            <Form.Group>
-                <Form.Label>Title</Form.Label>
-                <Form.Control name="title" type="title" onChange={changeHandler}></Form.Control>
-            </Form.Group>
+                <Form.Group>
+                <div className='label'><Form.Label>Title</Form.Label></div>
+                    <Form.Control name="title" type="title" onChange={changeHandler}></Form.Control>
+                </Form.Group>
 
-            <Form.Group>
-                <Form.Label>Education</Form.Label>
-                <Form.Control name="education" type="education" onChange={changeHandler}></Form.Control>
-            </Form.Group>
+                <Form.Group>
+                <div className='label'><Form.Label>Education</Form.Label></div>
+                    <Form.Control name="education" type="education" onChange={changeHandler}></Form.Control>
+                </Form.Group>
 
-            <Form.Group>
-                <Form.Label>Skills</Form.Label>
-                <Form.Control name="skills" type="skills" onChange={changeHandler}></Form.Control>
-            </Form.Group>
+                <Form.Group>
+                <div className='label'><Form.Label>Skills</Form.Label></div>
+                    <Form.Control name="skills" type="skills" onChange={changeHandler}></Form.Control>
+                </Form.Group>
 
-            <br></br>
+                <br></br>
 
-            <Button variant="primary" onClick={regsiterHandler}>Register</Button>
+                <Button className='signup-button' variant="primary" onClick={regsiterHandler}>Register</Button>
 
-        </Container>
-        
+            </Container>
+        </div>
+        <div className='signup-left-container'></div>
     </div>
   )
 }

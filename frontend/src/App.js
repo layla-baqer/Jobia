@@ -6,7 +6,7 @@ import Edit from './Components/Edit/Edit'
 import Profile from './Components/Profile/Profile'
 import Details from './Components/Details/Details'
 import About from './Components/About/About'
-import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useParams, redirect } from 'react-router-dom'
 import Signup from './Components/user/Signup';
 import Login from './Components/user/Login'
 import axios from 'axios';
@@ -14,10 +14,12 @@ import { useState, useEffect } from 'react';
 import jwt_decode from 'jwt-decode';
 
 
+
 function App() {
 
   const [isAuth, setIsAuth] = useState(false)
   const [user, setUser] = useState({})
+
 
   useEffect(() => {
     let token = localStorage.getItem('token')
@@ -70,6 +72,7 @@ function App() {
     localStorage.removeItem("token");
     setIsAuth(false);
     setUser(null);
+    console.log('user logged out')
   }
 
   // const Profile = () => {
@@ -86,17 +89,37 @@ function App() {
       <div className="App">
       <Routes>
         <Route path='/user/home' element={isAuth ? <UserHome /> : <Login login={loginHandler}/>}></Route>
+ 
         <Route path='/profile' element={<Profile />}></Route>
         <Route path='/profile/edit' element={<Edit />}></Route>
         <Route path='' element={isAuth ? <UserHome /> : <Login login={loginHandler}/>}></Route>
         <Route path='/job/:id' element={<Details />}></Route>
+ 
+        <Route path='/profile' element={isAuth ? <Profile /> : <Login
+        login={loginHandler}
+        />}></Route>
+        <Route path='/profile/edit' element={isAuth ? <Edit
+        onLogoutHandler={onLogoutHandler}
+        setIsAuth={setIsAuth}
+        /> : <Login
+        login={loginHandler}
+        />}></Route>
+        <Route path='' element={isAuth ? <UserHome /> : <Login login={loginHandler}/>}></Route>
+        <Route path='/job/:id' element={isAuth ? <Details /> : <Login
+        login={loginHandler}
+        />}></Route>
+ 
         <Route path='/signup' element={<Signup
         register={registerHandler}
         />}></Route>
         <Route path='/login' element={isAuth ? <UserHome /> : <Login
         login={loginHandler}
         />}></Route>
-        <Route path='/about' element={<About />}></Route>
+        {/* <Route path='/login' element={<Login
+        login={loginHandler} />}></Route> */}
+        <Route path='/about' element={isAuth ? <About /> : <Login
+        login={loginHandler}
+        />}></Route>
       </Routes>
       </div>
   </Router>
