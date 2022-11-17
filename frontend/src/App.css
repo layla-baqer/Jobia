@@ -167,6 +167,22 @@ Form.Label {
   cursor: pointer;
 }
 
+.edit-delete-button {
+  width: 400px;
+  height: 40px;
+  background: #cca1f0;
+  border-radius: 10px;
+  border: none;
+  color: #FFFFFF;
+  font-weight: 550;
+  font-size: 20px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+.edit-delete-button:hover {
+  background: #e2184b;
+}
+
 /* ************************************************* */
 
 .about-desc {
